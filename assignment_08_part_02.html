@@ -3,6 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <title>assignment_08_part_02</title>
+
+  <style>
+
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+    }
+
+    body {
+      background-color: darkslategrey;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+
+    }
+
+    .square {
+
+      width: 100px;
+      height: 50px;
+      border-radius: 5px;
+
+
+
+    }
+
+    #sqr-01 {
+      background-color: pink;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      margin-left: 5px;
+    }
+
+    #sqr-02 {
+      background-color: mediumpurple;
+      margin-right: 15px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    #sqr-03 {
+      background-color: red;
+      margin-right: 15px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    #sqr-04 {
+      background-color: darkgreen;
+      margin-right: 15px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+    }
+
+    #sqr-05 {
+      background-color: blue;
+      margin-right: 15px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    #sqr-06 {
+      background-color: yellow;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      margin-right: 5px;
+    }
+
+    .container {
+      width: 800px;
+      height: fit-content;
+    }
+
+    #cont-02 {
+      border-top: 2px solid whitesmoke;
+      border-bottom: 2px solid whitesmoke;
+    }
+
+    .div-middle {
+
+      width: fit-content;
+      height: fit-content;
+
+      display: flex;
+      flex-direction: row;
+
+      align-self: end;
+
+    }
+
+    .container {
+      display: flex;
+    }
+
+    #cont-03 {
+      justify-content: end;
+    }
+
+    #cont-02 {
+      justify-content: center;
+    }
+
+
+    section {
+      width: fit-content;
+      height: fit-content;
+      position: absolute;
+      align-self: start;
+
+      padding-top: 25vh;
+
+    }
+
+
+
+
+
+  </style>
+
+
+
+
+
+
 </head>
 <body>
 
@@ -15,22 +143,49 @@
   </div>
 
   <div class="container" id="cont-02">
-    <div id="sqr-02"></div>
-    <div id="sqr-03"></div>
-    <div id="sqr-04"></div>
-    <div id="sqr-05"></div>
+
+    <div class="div-middle">
+      <div class="square" id="sqr-02"></div>
+      <div class="square" id="sqr-03"></div>
+      <div class="square" id="sqr-04"></div>
+      <div class="square" id="sqr-05"></div>
+    </div>
+
   </div>
 
   <div class="container" id="cont-03">
-    <div id="sqr-06"></div>
+    <div class="square" id="sqr-06"></div>
   </div>
 
 
 </section>
 
 
+<script>
+
+  let data = ["pink", "mediumpurple", "red", "darkgreen", "blue", "yellow"];
 
 
+
+
+  const updateColors = () => {
+
+    let lastColor = data.pop();
+    data.unshift(lastColor);
+
+
+    data.map((r, index) => {document.getElementsByClassName('square')[index].style.backgroundColor = r})
+
+
+
+  }
+
+  setInterval(updateColors, 500)
+
+
+
+
+</script>
 
 </body>
 </html>
